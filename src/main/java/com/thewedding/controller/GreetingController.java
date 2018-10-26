@@ -12,4 +12,9 @@ public class GreetingController {
         return "greeting";
     }
 
+    @GetMapping("/when-where.html")
+    public String greetings(Model model) {
+        return "when-where";
+    }
+
 }
