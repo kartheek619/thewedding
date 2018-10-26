@@ -70,9 +70,9 @@
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 	
-		<div class="fh5co-hero" data-section="home">
+		<div class="fh5co-hero" data-section="home" style="background-image: url(images/cover_bg_1.jpg);">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+			<div id="main-img" class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/geetha_main.jpg);">
 				<div class="display-t">
 					<div class="display-tc">
 						<div class="container">
@@ -226,6 +226,19 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
+	<script>
+        var images = ['url(images/kartheek_main.jpg)','url(images/geetha_main.jpg)'],
+            index = 0, // starting index
+            maxImages = images.length - 1;
+        var timer = setInterval(function() {
+            var currentImage = images[index];
+            index = (index == maxImages) ? 0 : ++index;
+            $('#main-img').fadeOut(500, function() {
+                $('#main-img').css('background-image',currentImage);
+                $('#main-img').fadeIn(200);
+            });
+        }, 5000);
+	</script>
 	</body>
 </html>
 
